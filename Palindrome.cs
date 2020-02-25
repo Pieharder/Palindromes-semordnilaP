@@ -29,7 +29,13 @@ class Palindromes
   public static string reverseString(string forwardString)
   {
     char[] charArray = forwardString.ToCharArray();
-    Array.Reverse(charArray);
-    return new string(charArray);
+    List<char> reverseList = new List<char>();
+    for(int i = charArray.Length-1; i >= 0; i--)
+    {
+      reverseList.Add(charArray[i]);
+    }
+    char[] reverseArr = reverseList.ToArray();
+    string reverseString = string.Join("", reverseArr);
+    return reverseString;
   }
 }
